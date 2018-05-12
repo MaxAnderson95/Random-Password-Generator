@@ -68,7 +68,7 @@ If ($Symbols) {
 
 }
 
-#Ensure the (minimum) length is greater than or equal to the number of character set counts. Otherwise verification will fail later.
+#Ensure the (minimum) length is greater than or equal to the number of character set counts. Otherwise verification later on will cause an infinite loop.
 If ($Length[0] -lt $CharacterSetCount) {
 
     Write-Error "The specified length of the password must be greater than or equal to the number of character sets chosen!"
