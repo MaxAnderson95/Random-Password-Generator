@@ -119,7 +119,7 @@ For ($i = 1; $i -le $Count; $i++) {
 
         $PasswordValid = $True
 
-        #Ensure that the password meets the requirements
+        #Ensure randomly generated password meets original requirements
         If ($LowerCase) {
 
             If ($Password -cnotmatch '[a-z]') {
