@@ -1,3 +1,55 @@
+<#
+
+    .SYNOPSIS
+        Generates a random password
+
+    .DESCRIPTION
+        Generates a random password. Allows for the specification of character classes,
+        length (including a length range), the exclusion of ambiguous characters, and the
+        ability to output multiple passwords at once.
+
+    .PARAMETER Length
+        The required length of the randomly generated password. This also accepts an array
+        of only 2 integers. Ex: 6,25 (Randomly generated passwoed between 6 and 25 characters)
+        If unspecified, the length has a default fixed value of 10.
+
+    .PARAMETER LowerCase
+        Specifies that the password must have at least one lower case letter.
+
+    .PARAMETER UpperCase
+        Specifies that the password must have at least one upper case letter.
+
+    .PARAMETER Numbers
+        Specifies that the password must have at least one digit (0-9).
+
+    .PARAMETER Symbols
+        Specifies that the password must have at least one common symbol.
+
+    .PARAMETER ExcludeAmbiguousCharacters
+        Specifies that the password must not have any ambiguous or similar characters.
+        This prevents confustion when manually reading and typing the password.
+
+    .PARAMETER Count
+        Specifies the number of randomly generated passwords to return. The default is 1.
+
+    .EXAMPLE
+        PS C:> .\Generate-RandomPassword.ps1 -Length 6 -LowerCase -UpperCase -Numbers -Symbols
+        2@,+Yl
+
+    .EXAMPLE
+        PS C:> .\Generate-RandomPassword.ps1 -Length 6,10 -LowerCase -UpperCase -Numbers -Symbols
+        zz7(=EE
+    
+    .EXAMPLE
+        PS C:> .\Generate-RandomPassword.ps1 -Length 6,10 -LowerCase -UpperCase -Numbers -Symbols -Count
+        zz7(=EE
+        /fWhY]b{l9
+        p1hC@T(
+        F6-,}h
+        1J1=,3o
+
+#>
+
 [CmdletBinding()]
 Param (
     
