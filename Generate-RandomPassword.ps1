@@ -41,12 +41,12 @@
         zz7(=EE
     
     .EXAMPLE
-        PS C:> .\Generate-RandomPassword.ps1 -Length 6,10 -LowerCase -UpperCase -Numbers -Symbols -Count
-        zz7(=EE
-        /fWhY]b{l9
-        p1hC@T(
-        F6-,}h
-        1J1=,3o
+        PS C:> .\Generate-RandomPassword.ps1 -Length 6,40 -LowerCase -UpperCase -Numbers -Symbols -Count 5
+        <w7G_YY@Zfcr,0D#gTxl<:-tGu&w
+        5V3Gh3Jlu7P^v)$7!
+        _x<V@4fa*O#\{<Y_L%!UWnXeHyT=WvB+e/
+        QKU\Sf)v_;u68t
+        UJ=)0JyVsaT3#!Q*GA9k%nG>KNQp%}7C-S2mh2#
 
 #>
 
