@@ -48,6 +48,14 @@
         QKU\Sf)v_;u68t
         UJ=)0JyVsaT3#!Q*GA9k%nG>KNQp%}7C-S2mh2#
 
+    .EXAMPLE
+        PS C:> .\Generate-RandomPassword.ps1 -Length 6,40 -LowerCase -UpperCase -Numbers -Symbols -ExcludeAmbiguousCharacters -Count 5
+        UJ5lCZsU7TAqFlg8xX*DZLh%FI=:
+        bPMf_3E?dn6IDlM
+        2f*bWC=-C1gvfr:2;p7=f
+        K_*&jXnui$dsPx3*nbZqa4
+        7y%3J8^;YaHuS&npzN&I
+
 #>
 
 [CmdletBinding()]
