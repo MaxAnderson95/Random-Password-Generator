@@ -77,7 +77,7 @@ For ($i = 1; $i -le $Count; $i++) {
         #Create an empty password array
         $PasswordArray = @()
 
-        #If a length range is specified
+        #If a length range is specified (if it is a multi item array)
         If ($Length.Count -gt 1) {
 
             Write-Verbose '$Length is an array'
