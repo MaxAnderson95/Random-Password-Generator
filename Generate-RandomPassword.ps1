@@ -88,7 +88,7 @@ $LowerCaseCharacters = @('a','b','c','d','e','f','g','h','i','j','k','l','m','n'
 $UpperCaseCharacters = @('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
 $NumberCharacters = @('0','1','2','3','4','5','6','7','8','9')
 $SymbolCharacters = @('!','@','#','$','%','^','&','*','(',')','[',']','{','}','-','_','=','+','<','>',',','?','/','\',':',';')
-$AmbiguousCharacters = @('(',')','[',']','{','}','/','\','.',',')
+$AmbiguousCharacters = @('(',')','[',']','{','}','/','\','.',',','0','O','o','Q')
 
 #Construct a character Set. An array list is used for easy removal of items from array
 [System.Collections.ArrayList]$CharacterSet = @()
