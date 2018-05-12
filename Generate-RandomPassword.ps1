@@ -147,6 +147,8 @@ If ($ExcludeAmbiguousCharacters) {
 #Create a password N number of times based on the count variable
 For ($i = 1; $i -le $Count; $i++) {
 
+    Write-Verbose "Starting password: $i."
+
     Do {
         
         #Create an empty password array
@@ -182,7 +184,7 @@ For ($i = 1; $i -le $Count; $i++) {
 
             If ($Password -cnotmatch '[a-z]') {
 
-                Write-Verbose '$Password does not contain lowercase letters'
+                Write-Verbose '$Password does not contain lowercase letters. Starting over.'
 
                 $PasswordValid = $False
                 Continue
@@ -195,7 +197,7 @@ For ($i = 1; $i -le $Count; $i++) {
 
             If ($Password -cnotmatch '[A-Z]') {
 
-                Write-Verbose '$Password does not contain uppercase letters'
+                Write-Verbose '$Password does not contain uppercase letters. Starting over.'
 
                 $PasswordValid = $False
                 Continue
@@ -208,7 +210,7 @@ For ($i = 1; $i -le $Count; $i++) {
 
             If ($Password -notmatch '\d') {
 
-                Write-Verbose '$Password does not contain numbers'
+                Write-Verbose '$Password does not contain numbers. Starting over.'
 
                 $PasswordValid = $False
                 Continue
@@ -221,7 +223,7 @@ For ($i = 1; $i -le $Count; $i++) {
 
             If ($Password -notmatch '(\p{P}|\p{S})+') {
 
-                Write-Verbose '$Password does not contain symbols'
+                Write-Verbose '$Password does not contain symbols. Starting over.'
 
                 $PasswordValid = $False
                 Continue
