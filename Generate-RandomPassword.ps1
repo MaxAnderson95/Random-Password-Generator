@@ -25,6 +25,12 @@ If (!$LowerCase -and !$UpperCase -and !$Numbers -and !$Symbols) {
 
 }
 
+#Validate that the length parameter is an array with either 1 or 2 elements (a fixed length or a length range)
+If ($Length.count -gt 2 -or $Length.count -lt 1) {
+    Write-Error "Specified length must be a single number or a range of two numbers separated by a comma (an array)."
+    Break
+} 
+
 #Available Character Types
 $LowerCaseCharacters = @('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
 $UpperCaseCharacters = @('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
