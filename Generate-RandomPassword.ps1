@@ -160,15 +160,17 @@ For ($i = 1; $i -le $Count; $i++) {
             Write-Verbose '$Length is an array'
 
             #Choose a random length between the min and max specified
-            $Length = $Length[0]..$Length[1] | Get-Random
+            $PasswordLength = $Length[0]..$Length[1] | Get-Random
 
         }
 
         #Convert the length to a non array integer
-        [Int32]$Length = $Length[0]
+        [Int32]$PasswordLength = $PasswordLength[0]
+
+        Write-Verbose "`$PasswordLength is $PasswordLength" 
 
         #Loop through each character space and choose a random character from the character set
-        1..$Length | ForEach-Object {
+        1..$PasswordLength | ForEach-Object {
 
             Write-Verbose "Processing character $($_)"
             $PasswordArray += $CharacterSet | Get-Random
