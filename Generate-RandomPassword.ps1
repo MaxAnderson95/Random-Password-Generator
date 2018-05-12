@@ -67,13 +67,13 @@ If ($ExcludeAmbiguousCharacters) {
 
     }
 
-}
+}    
 
-While ($PasswordValid -eq $False) {
-    
-    #Create a password N number of times based on the count variable
-    For ($i = 1; $i -le $Count; $i++) {
+#Create a password N number of times based on the count variable
+For ($i = 1; $i -le $Count; $i++) {
 
+    Do {
+        
         #Create an empty password array
         $PasswordArray = @()
 
@@ -86,43 +86,77 @@ While ($PasswordValid -eq $False) {
             $Length = $Length[0]..$Length[1] | Get-Random
 
         }
-        
+
         #Convert the length to a non array integer
         [Int32]$Length = $Length[0]
 
         #Loop through each character space and choose a random character from the character set
         1..$Length | ForEach-Object {
 
-            Write-Verbose "Character $($_)"
+            Write-Verbose "Processing character $($_)"
             $PasswordArray += $CharacterSet | Get-Random
 
         }
 
-    $Password = $PasswordArray -join ''
+        $Password = $PasswordArray -join ''
 
-    #Ensure that the password meets the requirements
-    If ($LowerCase) {
+        $PasswordValid = $True
 
-        If ($Password -notmatch '[a-z]') {
+        #Ensure that the password meets the requirements
+        If ($LowerCase) {
 
-            $PasswordValid = $False
+            If ($Password -cnotmatch '[a-z]') {
 
-        } Else {$PasswordValid = $True}
+                Write-Verbose '$Password does not contain lowercase letters'
 
-    }
+                $PasswordValid = $False
+                Continue
 
-    If ($UpperCase) {
+            } Else {$PasswordValid = $True}
 
-        If ($Password -notmatch '[A-Z]') {
+        }
 
-            $PasswordValid = $False
-            
-        } Else {$PasswordValid = $True}
+        If ($UpperCase) {
 
-    }
+            If ($Password -cnotmatch '[A-Z]') {
 
-}
+                Write-Verbose '$Password does not contain uppercase letters'
 
-Write-Output $Password
+                $PasswordValid = $False
+                Continue
+                
+            } Else {$PasswordValid = $True}
+
+        }
+
+        If ($Numbers) {
+
+            If ($Password -notmatch '\d') {
+
+                Write-Verbose '$Password does not contain numbers'
+
+                $PasswordValid = $False
+                Continue
+
+            } Else {$PasswordValid = $True}
+
+        }
+
+        If ($Symbols) {
+
+            If ($Password -notmatch '(\p{P}|\p{S})+') {
+
+                Write-Verbose '$Password does not contain symbols'
+
+                $PasswordValid = $False
+                Continue
+
+            } Else {$PasswordValid = $True}
+
+        }
+
+    } Until ($PasswordValid -eq $True)
+    
+    Write-Output $Password
 
 }
