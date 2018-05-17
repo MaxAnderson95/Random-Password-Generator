@@ -6,7 +6,7 @@ A Random Password Generator Written in PowerShell!
 * The ability to specifiy character sets to use: Upper Case, Lower Case, Numbers, Symbols
 * The ability to exclude ambiguous characters
 * The ability to output multiple passwords
-* The ability to copy to clipboard with -
+* The ability to copy to clipboard with `-CopyToClipboard` switch
 * Checks that the randomly generated password meets complexity requirements spcified. If it doesn't it re-generates it.
 * Verbose output
 
