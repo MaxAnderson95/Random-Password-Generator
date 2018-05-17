@@ -48,3 +48,9 @@ bPMf_3E?dn6IDlM
 K_*&jXnui$dsPx3*nbZqa4
 7y%3J8^;YaHuS&npzN&I
 ```
+
+## Full Help Documentation
+A full set of help documenation can be found by executing the following after importing the module:
+```PowerShell
+PS C:\> Get-Help New-RandomPassword -Full
+```
