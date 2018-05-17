@@ -1,4 +1,4 @@
-Function Generate-RandomPassword {
+Function New-RandomPassword {
 
     <#
 
@@ -9,11 +9,6 @@ Function Generate-RandomPassword {
             Generates a random password. Allows for the specification of character classes,
             length (including a length range), the exclusion of ambiguous characters, and the
             ability to output multiple passwords at once.
-
-        .PARAMETER Length
-            The required length of the randomly generated password. This also accepts an array
-            of only 2 integers. Ex: 6,25 (Randomly generated passwoed between 6 and 25 characters)
-            If unspecified, the length has a default fixed value of 10.
 
         .PARAMETER LowerCase
             Specifies that the password must have at least one lower case letter.
@@ -31,6 +26,11 @@ Function Generate-RandomPassword {
             Specifies that the password must not have any ambiguous or similar characters.
             This prevents confustion when manually reading and typing the password.
 
+        .PARAMETER Length
+            The required length of the randomly generated password. This also accepts an array
+            of only 2 integers. Ex: 6,25 (Randomly generated passwoed between 6 and 25 characters)
+            If unspecified, the length has a default fixed value of 10.
+        
         .PARAMETER Count
             Specifies the number of randomly generated passwords to return. The default is 1.
 
