@@ -15,7 +15,7 @@ A Random Password Generator Written in PowerShell!
 PS C:> Import-Module .\Random-Password-Generator\Random-Password-Generator
 ```
 
-1. Then call the funtion `New-RandomPassword`
+2. Then call the funtion `New-RandomPassword`
 
 ```PowerShell
 PS C:> New-RandomPassword -Length 6 -LowerCase -UpperCase -Numbers -Symbols
