@@ -10,20 +10,27 @@ A Random Password Generator Written in PowerShell!
 * Verbose output
 
 ## Usage
+1. First begin by cloning/downloading the repo to one of the directories in your $env:PSModulePath OR manually import the module:
 ```PowerShell
-PS C:> .\Generate-RandomPassword.ps1 -Length 6 -LowerCase -UpperCase -Numbers -Symbols
+PS C:> Import-Module .\Random-Password-Generator\Random-Password-Generator
+```
+
+1. Then call the funtion `New-RandomPassword`
+
+```PowerShell
+PS C:> New-RandomPassword -Length 6 -LowerCase -UpperCase -Numbers -Symbols
 
 2@,+Yl
 ```
 
 ```PowerShell
-PS C:> .\Generate-RandomPassword.ps1 -Length 6,10 -LowerCase -UpperCase -Numbers -Symbols
+PS C:> New-RandomPassword -Length 6,10 -LowerCase -UpperCase -Numbers -Symbols
 
 zz7(=EE
 ```
 
 ```PowerShell
-PS C:> .\Generate-RandomPassword.ps1 -Length 6,40 -LowerCase -UpperCase -Numbers -Symbols -Count 5
+PS C:> New-RandomPassword -Length 6,40 -LowerCase -UpperCase -Numbers -Symbols -Count 5
 
 <w7G_YY@Zfcr,0D#gTxl<:-tGu&w
 5V3Gh3Jlu7P^v)$7!
@@ -33,7 +40,7 @@ UJ=)0JyVsaT3#!Q*GA9k%nG>KNQp%}7C-S2mh2#
 ```
 
 ```PowerShell
-PS C:> .\Generate-RandomPassword.ps1 -Length 6,40 -LowerCase -UpperCase -Numbers -Symbols -ExcludeAmbiguousCharacters -Count 5
+PS C:> New-RandomPassword -Length 6,40 -LowerCase -UpperCase -Numbers -Symbols -ExcludeAmbiguousCharacters -Count 5
 
 UJ5lCZsU7TAqFlg8xX*DZLh%FI=:
 bPMf_3E?dn6IDlM
