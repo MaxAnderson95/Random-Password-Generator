@@ -170,13 +170,17 @@ Function Generate-RandomPassword {
                 Write-Verbose '$Length is an array'
 
                 #Choose a random length between the min and max specified
-                $PasswordLength = $Length[0]..$Length[1] | Get-Random
+                [Int32]$PasswordLength = $Length[0]..$Length[1] | Get-Random
 
             }
 
-            #Convert the length to a non array integer
-            [Int32]$PasswordLength = $PasswordLength[0]
-
+            Else {
+                
+                #Convert the length to a non array integer
+                [Int32]$PasswordLength = $Length[0]
+            
+            }
+            
             Write-Verbose "`$PasswordLength is $PasswordLength" 
 
             #Loop through each character space and choose a random character from the character set
