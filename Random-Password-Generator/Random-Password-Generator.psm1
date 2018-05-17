@@ -62,8 +62,6 @@ Function Generate-RandomPassword {
 
     [CmdletBinding()]
     Param (
-        
-        [Int32[]]$Length = 10,
 
         [Switch]$LowerCase,
 
@@ -74,6 +72,8 @@ Function Generate-RandomPassword {
         [Switch]$Symbols,
 
         [Switch]$ExcludeAmbiguousCharacters,
+
+        [Int32[]]$Length = 10,
 
         [Int]$Count = 1
 
