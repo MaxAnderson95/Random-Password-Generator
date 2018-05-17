@@ -1,4 +1,4 @@
-# Random-Password-Generator
+# PowerShell Random Password Generator
 A Random Password Generator Written in PowerShell!
 
 ## Features
