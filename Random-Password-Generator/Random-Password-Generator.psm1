@@ -75,7 +75,9 @@ Function Generate-RandomPassword {
 
         [Int32[]]$Length = 10,
 
-        [Int]$Count = 1
+        [Int]$Count = 1,
+
+        [Switch]$CopyToClipboard
 
     )
 
@@ -251,6 +253,19 @@ Function Generate-RandomPassword {
         } Until ($PasswordValid -eq $True)
         
         Write-Output $Password
+
+        If ($CopyToClipboard) {
+
+            [Array]$Passwords += $Password
+
+        }
+
+    }
+
+    If ($CopyToClipboard) {
+
+        Write-Information "Password(s) copied to clipboard." -InformationAction Continue
+        Set-Clipboard $Passwords
 
     }
 
