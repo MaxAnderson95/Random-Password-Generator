@@ -12,4 +12,4 @@ install:
 build: false
 
 test_script:
-  - ps: . .\Tests\appveyor.pester.ps1 -Test -Finalize
+  - ps: PowerShell.exe -ExecutionPolicy Bypass -NoProfile -Sta -File .\Tests\appveyor.pester.ps1 -Test -Finalize
