@@ -1,4 +1,6 @@
+<a href="https://ci.appveyor.com/project/MaxAnderson95/random-password-generator">
 <img src="https://ci.appveyor.com/api/projects/status/github/MaxAnderson95/Random-Password-Generator?branch=master&svg=true" alt="Project Badge" width="125">
+</a>
 
 # PowerShell Random Password Generator
 A Random Password Generator Written in PowerShell!
