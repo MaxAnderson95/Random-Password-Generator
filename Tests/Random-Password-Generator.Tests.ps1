@@ -11,14 +11,6 @@ Describe "New-RandomPassword" {
 
     #Context "No Parameters" {
 
-        It "Errors if no parameters are given" {
-
-            $Error.clear()
-            New-RandomPassword -ErrorAction SilentlyContinue
-            $Error.Exception.Message | Should Be "At least one character group must be chosen!"
-
-        }
-
         It "Errors if number of character classes exceeds specified length" {
 
             $Error.clear()
