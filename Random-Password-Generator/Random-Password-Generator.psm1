@@ -73,7 +73,7 @@ Function New-RandomPassword {
 
         [Switch]$ExcludeAmbiguousCharacters,
 
-        [Int32[]]$Length = 10,
+        [Int32[]]$Length = 16,
 
         [Int]$Count = 1,
 
@@ -84,8 +84,12 @@ Function New-RandomPassword {
     #Validate at least one character type is chosen
     If (!$LowerCase -and !$UpperCase -and !$Numbers -and !$Symbols) {
 
-        Write-Error "At least one character group must be chosen!"
-        Break
+        #Write-Error "At least one character group must be chosen!"
+        #Break
+
+        $LowerCase = $True
+        $UpperCase = $True
+        $Numbers = $True
 
     }
 
