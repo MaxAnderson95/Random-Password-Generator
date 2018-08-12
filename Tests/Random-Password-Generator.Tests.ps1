@@ -27,11 +27,11 @@ Describe "New-RandomPassword" {
 
         }
 
-        It "No length is specified, a 10 character password is outputted" {
+        It "No length is specified, a 16 character password is outputted" {
 
             Remove-Variable Password -ErrorAction SilentlyContinue
             $Password = New-RandomPassword -LowerCase -UpperCase -Numbers -Symbols
-            $Password.length | Should Be 10
+            $Password.length | Should Be 16
 
         }
 
